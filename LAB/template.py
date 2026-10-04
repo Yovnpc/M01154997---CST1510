@@ -2,9 +2,9 @@
 RECORD CHECK  -  my version
 ===========================
 
-Name  : Yovan Prakash Cahoolessur
-Lane  :  AI      (delete two)
-Date  :03/10/2026
+Name  :  Yovan Prakash Cahoolessur
+Lane  :  AI/DATA SCIENCE
+Date  :  29/09/2026
 
 Run it:   python template.py
 
@@ -13,79 +13,58 @@ Delete these instructions as you replace them with your code.
 """
 
 # ==================================================================== INPUT
-# 1. Ask for your three values.
+# 1. Ask the user for your three values.
 #
 #    - the first is TEXT      (a name, a hostname, an IP)  -> no conversion needed
 #    - the second is a NUMBER (use float(), not int())
 #    - the third  is a NUMBER (use float(), not int())
+#
+#    Remember: input() always gives back text.
 
-# data_set =input("Enter Data set name : ")      
-# rows_loaded = float(input("Enter amount of rows loaded : "))     
-# rows_expected = float(input("Enter amount of rows expected : "))  
+data_set =input("Enter Data set name : ")      # : replace with an input() call
+rows_loaded =float(input("Enter rows loaded : "))     # : replace with an input() call, converted
+rows_expected =float(input("Enter rows expected : "))    # : replace with an input() call, converted
 
 
 # ================================================================== PROCESS
-# 2. Work out the difference and the percentage.       [Typical and above]
-
-# difference = rows_expected-rows_loaded  
-# percent = (rows_loaded/rows_expected)*100  
-# ====================================================================     
-# 3. Decide a status and store it in a variable called status.
+# 2. Work out what you were NOT given.       [Typical and above]
 #
-#    Threshold : if / else        -> "OVER LIMIT" or "OK"
-#    Typical   : if / elif / else -> "OVER LIMIT" (100% or more),
-#                                     "WARNING" (90% or more), otherwise "OK"
+#    - difference : how far the first is from the second
+#    - percent    : the first as a percentage of the second
+#
+#    Do not type the answers. Calculate them.
 
-# if percent>100:                 
-#     status="OVER LIMIT"
-# elif percent>=90:
-#     status="WARNING"
-# else:
-#     status="OK"
+difference = rows_expected-rows_loaded   
+percent = (rows_loaded/rows_expected)*100      
 
 
 # =================================================================== OUTPUT
-# 4. Print the report.
+# 3. Print the report.
 #
-#    Threshold : the three values you were given, plus status, inside a border
+#    Threshold : print the three values you were given, inside a border
 #    Typical   : add difference and percent, 2 decimal places, right-aligned
-#    Excellent : wrap sections 1-4 in a loop so you can check as many records
-#                as you like in one run - type "quit" as the label to stop.
-#                Keep count of how many came back OVER LIMIT and print that
-#                once, after the loop ends.
+#    Excellent : difference always shows its sign, plus one line of your own
+#
+#    Useful:   f"{value:>10.2f}"    right-aligned, 2 decimal places
+#              f"{value:>+10.2f}"   the same, but always shows the sign
 
-count=0
-while True:
-    data_set =input("Enter Data set name : ") 
-    if data_set=="quit":
-        break
-    rows_loaded = float(input("Enter amount of rows loaded : "))
-    rows_expected = float(input("Enter amount of rows expected : "))
-    difference = rows_expected-rows_loaded
-    percent = (rows_loaded/rows_expected)*100
-    if percent>100:                 
-        status="OVER LIMIT"
-        count+=1
-    elif percent>=90:
-        status="WARNING"
-    else:
-        status="OK"
-    print()
-    print("=" * 34)
-    print(f"  RECORD CHECK  -  {data_set}")
-    print("=" * 34)
+print("=" * 34)
+print(f"  RECORD CHECK  -  {data_set}")
+print("=" * 34)
+# : your report lines go here
+print(f'Rows loaded        : {rows_loaded:>10.2f}\n'
+      f'Rows Expected      : {rows_expected:>10.2f} \n'
+      f'Difference         : {difference:>+10.2f} \n'
+      f'Percentage filled  : {percent:>10.2f} % \n'
+      f'Percentage Unused  : {100-percent:>10.2f} %'    #Shows unused percentage
+)
+print("=" * 34)   
+      
 
-    print(f'Rows loaded     : {rows_loaded:>10.2f}\n'
-          f'Rows Expected   : {rows_expected:>10.2f} \n'
-          f'Difference      : {difference:>+10.2f} \n'
-          f'Percentage      : {percent:>10.2f} % \n'
-          f'Status          : {status:>10}'
-    )
-    print("=" * 34)
-print(f"Amount of OVER LIMIT : {count}")
 # ==========================================================================
-# 5. Before you finish:
+# 4. Before you finish:
 #
 #    [ ] Run it three times with different numbers
-#    [ ] Run it with a total of 0 and note the error (do not fix it yet)
+#    [ ] Run it with a total of 0 and write the error in your journal
 #    [ ] Check every variable name says what it holds
+#    [ ] Show it to the person next to you

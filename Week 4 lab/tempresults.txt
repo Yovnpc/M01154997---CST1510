@@ -1,5 +1,5 @@
-Yovan : OK
-Prakash : OVER LIMIT
-cahoolessur : OVER LIMIT
-micheal jackson : OK
-freddie mercury : WARNING
+Yovan OK
+Prakash OVER LIMIT
+cahoolessur OVER LIMIT
+micheal jackson OK
+freddie mercury WARNING

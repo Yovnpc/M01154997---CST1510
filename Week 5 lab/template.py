@@ -48,9 +48,9 @@ for record in records:
     print(f"  RECORD CHECK  -  {record.label}")
     print("=" * 34)
 
-    print(f'Value  : {record.value}\n'
-          f'limit  : {record.limit}\n'
-          f'status : {record.status()}')
+    print(f'Rows loaded   : {record.value}\n'
+          f'Rows expected : {record.limit}\n'
+          f'status        : {record.status()}')
     
 
     print("=" * 34)

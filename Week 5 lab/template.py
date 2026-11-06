@@ -2,17 +2,15 @@
 RECORD CHECK  -  my version
 ===========================
 
-Name  :
-Lane  :  AI / Cyber / IT      (delete two)
-Date  :
+Name  : Yovan Prakash Cahoolessur
+Lane  :  AI 
+Date  : 03/11/2026
 
 Run it:   python template.py
 
 Work through the numbered sections in order. Each one tells you what it must do.
 Delete these instructions as you replace them with your code.
 """
-
-
 class Record:
     over_limit_count=0
     def __init__(self,label,value,limit):

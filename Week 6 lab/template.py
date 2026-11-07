@@ -47,5 +47,3 @@ df.to_csv("temp_report.csv",index=False)
 count_status.plot(kind="bar",title="Status counter",xlabel="Status",ylabel="Occurence(count)")
 plt.tight_layout() #makes the bar chart elements fit the png
 plt.savefig("Count_Of_Status.png") #Saves the bar chart as a png
-
-

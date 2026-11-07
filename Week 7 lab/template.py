@@ -25,7 +25,7 @@ def parse_line(raw_line):
 def status_of(record):
     """Classify surveys based on rating"""
     rating=record["rating"]
-    if rating<2:
+    if rating<=2:
         return "FLAGGED"     #sets status based of rating
     else:
         return "OK"
@@ -40,6 +40,8 @@ with open("tempmessy.txt") as f: #opens file in reading mode
 
 tot_records=0
 flagged=0
+print()
+print()
 for raw_record in raw_records:
     record=parse_line(raw_record)
     status=status_of(record)#fetch status
